@@ -10,7 +10,7 @@
   width: 56px;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   border: none;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,6 @@ mat-label {
   flex-grow: 1;
   color: var(--text-color);
   border-bottom-color: var(--primary-color);
-
 }
   
 .search-input {
@@ -64,5 +63,14 @@ mat-label {
   justify-content: center;
   background-color: var(--background-light-color);
   gap: 16px;
-  max-height: 80vh
+}
+
+.package-page__wrapper {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  display:flex;
+  flex-direction: column;
+  height: 96dvh;
+
 }

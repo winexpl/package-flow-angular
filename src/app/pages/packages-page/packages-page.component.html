@@ -1,23 +1,26 @@
-<section class="search-section">
-    <mat-form-field class="search-field" color="primary" appearance="fill">
-        <mat-label>Поиск</mat-label>
-        <input matInput class="search-input" type="search" placeholder="Введите текст" (input)="onInput($event)" />
-    </mat-form-field>
-    <button mat-icon-button class="refresh-button" color="primary" (click)="loadPackages()">
-        <mat-icon>refresh</mat-icon>
-    </button>
-</section>
-<section class="packages-list-section">
-        @for(package of filtredPackages; track package.id) {
-            <app-package-card 
-                [package]="package"
-                [highlightedPackage]="highlightedPackage"
-                [highlightedDependencies]="highlightedDependencies"
-                (mouseEnter)="onHighlight(package)"
-                (mouseLeave)="onClearHighlight()">
-            </app-package-card>
-        }
-        @empty {
-            <p class="empty-label">Нет доступных пакетов</p>
-        }
-</section>
+<div class="package-page__wrapper">
+    <section class="search-section">
+        <mat-form-field class="search-field" color="primary" appearance="fill">
+            <mat-label>Поиск</mat-label>
+            <input matInput class="search-input" type="search" placeholder="Введите текст" (input)="onInput($event)" />
+        </mat-form-field>
+        <button mat-icon-button class="refresh-button" color="primary" (click)="loadPackages()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </section>
+    <section class="packages-list-section">
+            @for(package of filtredPackages; track package.id) {
+                <app-package-card 
+                    [package]="package"
+                    [highlightedPackage]="highlightedPackage"
+                    [highlightedDependencies]="highlightedDependencies"
+                    (mouseEnter)="onHighlight(package)"
+                    (mouseLeave)="onClearHighlight()">
+                </app-package-card>
+            }
+            @empty {
+                <p class="empty-label">Нет доступных пакетов</p>
+            }
+    </section>
+</div>
+
