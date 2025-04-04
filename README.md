@@ -12,20 +12,6 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
 ## Building
 
 To build the project run:
@@ -36,24 +22,31 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Tasks
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+* Приложение должно работать с API (см. раздел ниже) для загрузки данных о пакетах
+* Каждый пакет должен быть представлен в виде карточки
+  * Заголовок должен отображать имя пакета. В случае если имя составное (через /), первая часть должна быть выделена цветом
+  * Тело должно содержать число скачек и зависимостей. В случае если число превышает 1000, оно должно быть округлено вниз до тысяч с буквой «К»; в случае если превышает 1000000, то до миллионов с буквой «М».
+  * При наведении курсора на карточку её заголовок должен быть подсвечен, а также другим цветом должны быть подсвечены заголовки всех карточек пакетов, находящихся в зависимостях у выделенного пакета (в примере tslib является зависимостью @angular/core)
+* Список пакетов должен быть скроллируемым
+* Пользователь должен иметь возможность фильтровать пакеты по названию
+* Пользователь должен иметь возможность перезагрузить все данные по кнопке или иным способом
 
-```bash
-ng test
+### API
+
+`GET /packages` – возвращает список всех пакетов:
+
+```json
+{
+  id: string;
+  weeklyDownloads: number;
+  dependencyCount: number;
+}[]
 ```
 
-## Running end-to-end tests
+`GET /packages/:id/dependencies` – возвращает список ID пакетов-зависимостей для указанного пакета:
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```json
+string[]
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
