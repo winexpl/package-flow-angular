@@ -1,0 +1,18 @@
+<mat-card class="package-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <mat-card-header [ngClass]="{'highlight': isHighlighted, 'dependency-highlight': isDependency}" class="package-card-header">
+        <span class="package-name-first-part">{{ getFirstPart(package.id) }}
+            <span class="package-name">{{ getSecondPart(package.id) }}</span>
+        </span>
+        
+    </mat-card-header>
+    <mat-card-content class="package-card-content">
+        <span>
+            <p class="package-card-label">
+                {{ package.weeklyDownloads | round }}{{' '}}
+            </p>
+            <mat-icon>download</mat-icon>
+        </span>
+        <p class="package-card-label">{{ package.dependencyCount }} dependencies</p>
+    </mat-card-content>
+</mat-card>
+  

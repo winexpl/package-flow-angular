@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: radial-gradient(circle, var(--background-light-color), var(--background-dark-color));
+}
+
+@keyframes colorChange {
+  0% { background-color: #ff8a80; }
+  25% { background-color: #ff80ab; }
+  50% { background-color: #b388ff; }
+  75% { background-color: #80d8ff; }
+  100% { background-color: #ff8a80; }
+}
+
+.animated-color {
+  animation: colorChange 4s infinite;
+}

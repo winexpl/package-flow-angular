@@ -1,0 +1,68 @@
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  gap: 16px;
+}
+ 
+.refresh-button {
+  height: 56px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: var(--background-light-color); /* Тёмный цвет при наведении */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Анимация при наведении */
+}
+
+mat-icon {
+  color: white;
+}
+
+mat-label {
+  color: var(--background-light-color)
+}
+
+.refresh-button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-field {
+  padding-bottom: 0px;
+  flex-grow: 1;
+  color: var(--text-color);
+  border-bottom-color: var(--primary-color);
+
+}
+  
+.search-input {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.empty-label {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-color);
+  margin: 16px 0;
+}
+
+.packages-list-section {
+  margin-top: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-light-color);
+  gap: 16px;
+  max-height: 80vh
+}

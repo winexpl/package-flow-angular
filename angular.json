@@ -10,7 +10,9 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        
         "build": {
+          
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/package-flow-angular",
@@ -27,7 +29,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/color.css"
             ],
             "scripts": []
           },
@@ -56,6 +59,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+              "proxyConfig": "proxy.conf.json"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -92,5 +98,9 @@
         }
       }
     }
+  },
+  
+  "cli": {
+    "analytics": "9fa31d81-67e8-4435-b054-f586f388e750"
   }
 }
